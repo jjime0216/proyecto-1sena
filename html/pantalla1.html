@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primer proyecto</title>
+    <link rel="stylesheet" href="../css/proyecto.css">
+</head>
+<body>
+    <header>
+        <h3>My project</h3>
+        <h1>Registrarse</h1>
+    </header>
+    <form action="">
+        <h2>Crea tu cuenta</h2>
+        <P>
+            <label for="name">Ingrese su nombre</label>
+        </P>
+            <input type="text" id="name" class="inputNombre" placeholder="Primer nombre" maxlength="50" minlength="2">
+            <input type="text" id="name" class="inputNombre" placeholder="Primer apellido" maxlength="50" minlength="2">
+            
+        <P>
+            <label for="correoEle">Correo electronico</label>
+        </P>
+            <input type="email" id="correoEle" placeholder="minombre@mirpoyecto.com">
+        <P>
+            <label for="numeroCel">Numero celular</label>
+        </P>
+            <input class="input2" id="numeroCel" type="text" placeholder="+57"><input type="text" class="input3" placeholder="Numero de celular">
+        <P>
+            <label for="password">Contraseña</label>
+        </P>
+            <input type="password" id="password" placeholder="Ingrese su contraseña">
+        <P>
+            <label for="conPassword">Confirme su contraseña</label>
+        </P>
+            <input type="password" id="conPassword" placeholder="Confirme su contraseña">
+        <p id="incorrecto"></p>
+             
+        <p class="p1">
+            <label>Imagen de perfil</label> 
+            <img src="../img/imagen1.jpeg" alt="fotoperfil" class="img1">
+            <button type="button" class="btn">Agregar</button>
+        </p>
+    </form>
+
+    <p>
+        <button type="submit" class="btn1" id="registrarse" onclick="registro()">Registrarse</button>
+        <img src="../img/imagen2.png" alt="caja" class="img2">
+        <label for="terminos" class="term">Al crear una cuenta, acepta las condiciones de uso y aviso de privacidad.</label>
+        <input type="checkbox" class="check" id="terminos">
+    </p>
+    <h3 class="mapa">Mapa de navegacion</h3>
+    <footer>
+        <div class="divfooter">
+            <label for="">Acerca de</label><br>
+            <a href="../index.html">Inicio</a><br>
+            <a href="pantalla2.html">Iniciar sesion</a>
+        </div>
+        <div class="divfooter">
+            <label for="">Vendedor</label><br>
+            <a href="pantalla3.html">Ingresar producto nuevo</a><br>
+            <a href="pantalla4.html">Medios de pago</a><br>
+            <a href="pantalla5.html">Confirmacion pagos</a><br>
+        </div>
+        <div class="divfooter">
+            <label for="">Redes Sociales</label><br>
+            <a href="https://x.com">X</a><br>
+            <a href="https://www.facebook.com/">Facebook</a><br>
+            <a href="https://www.instagram.com">Instagram</a><br>
+            <a href="https://www.youtube.com/">Youtube</a><br>
+        </div>
+        <div class="divfooter">
+            <label for="">Cliente</label><br>
+            <a href="pantalla6.html">Datos de entrega</a><br>
+            <a href="pantalla1.html">Registrate</a><br>
+        </div>
+    </footer>
+    <script src="..//js/proyecto.js"></script>
+</body>
+</html>
