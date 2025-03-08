@@ -44,6 +44,17 @@ input{
     background-color: #C7DCDD;
 }
 
+.btnFile{
+    width: 100px;
+    display: none;
+}
+.btn1File {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
 .input3{
     width: 324px;
 }
@@ -68,6 +79,7 @@ p{
 }
 .img1{
     width: 90px;
+    height: 90px;
     padding: 10px;
     border-radius: 60px;
 }

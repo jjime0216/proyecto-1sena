@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi primer proyecto</title>
     <link rel="stylesheet" href="../css/proyecto.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -17,7 +18,7 @@
             <label for="name">Ingrese su nombre</label>
         </P>
             <input type="text" id="name" class="inputNombre" placeholder="Primer nombre" maxlength="50" minlength="2">
-            <input type="text" id="name" class="inputNombre" placeholder="Primer apellido" maxlength="50" minlength="2">
+            <input type="text" id="lastname" class="inputNombre" placeholder="Primer apellido" maxlength="50" minlength="2">
             
         <P>
             <label for="correoEle">Correo electronico</label>
@@ -26,7 +27,7 @@
         <P>
             <label for="numeroCel">Numero celular</label>
         </P>
-            <input class="input2" id="numeroCel" type="text" placeholder="+57"><input type="text" class="input3" placeholder="Numero de celular">
+            <input class="input2" type="text" placeholder="+57"><input type="text" class="input3" placeholder="Numero de celular" id="numeroCel">
         <P>
             <label for="password">Contraseña</label>
         </P>
@@ -39,8 +40,9 @@
              
         <p class="p1">
             <label>Imagen de perfil</label> 
-            <img src="../img/imagen1.jpeg" alt="fotoperfil" class="img1">
-            <button type="button" class="btn">Agregar</button>
+            <img src="../img/imagen1.jpeg" alt="fotoperfil" id="ImgProfile" class="img1" >
+            <label for="imgInp" class="btn1File">Agregar</label>
+            <input class="btnFile" type="file" accept=".jpg, .png, .jpeg" id="imgInp">
         </p>
     </form>
 

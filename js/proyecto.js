@@ -1,4 +1,5 @@
 // // Aqui empieza la travesia
+
 //// Funciones Globales //////
 let incorrecto
 //////////////////////////////////  JS pantalla 2 /////////////////////////////////////////
@@ -19,13 +20,14 @@ function ingresar(){
 ////////////////////////////////// JS pantalla 1 //////////////////////////////////////////////////
 function registro(){
     let nombre = document.getElementById("name").value
+    let apellido = document.getElementById("lastname").value
     let correoEle = document.getElementById("correoEle").value
     let numeroCel = document.getElementById("numeroCel").value
     let password = document.getElementById("password").value
     let conPassword = document.getElementById("conPassword").value
     let terminos = document.getElementById("terminos")
 
-    if(nombre == "" || correoEle == "" || numeroCel == "" || password == "" || conPassword == ""){
+    if(nombre == "" || apellido == "" || correoEle == "" || numeroCel == "" || password == "" || conPassword == ""){
         incorrecto = document.getElementById("incorrecto").innerHTML = "Por favor completa todos los campos para continuar."
     }
     else if(password != conPassword){
@@ -38,3 +40,19 @@ function registro(){
     }
 
 }
+
+function imagen(input) {
+    if (input.files && input.files[0]) {
+        let reader = new FileReader();
+        
+        reader.onload = function (e) {
+            $('#ImgProfile').attr('src', e.target.result).show();
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#imgInp").change(function () {
+    imagen(this);
+});
