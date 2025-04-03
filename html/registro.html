@@ -8,12 +8,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
+    <!-- Formulario de registro -->
     <header>
         <h3>My project</h3>
         <h1>Registrarse</h1>
     </header>
     <form action="">
         <h2>Crea tu cuenta</h2>
+        <!-- Preguntas de formulario -->
         <P>
             <label for="name">Ingrese su nombre</label>
         </P>
@@ -37,7 +39,7 @@
         </P>
             <input type="password" id="conPassword" placeholder="Confirme su contraseña">
         <p id="incorrecto"></p>
-             
+        <!-- Imagen de perfil -->
         <p class="p1">
             <label>Imagen de perfil</label> 
             <img src="../img/imagen1.jpeg" alt="fotoperfil" id="ImgProfile" class="img1" >
@@ -45,25 +47,26 @@
             <input class="btnFile" type="file" accept=".jpg, .png, .jpeg" id="imgInp">
         </p>
     </form>
-
+    <!-- Boton principal para envio del formulario -->
     <p>
         <button type="submit" class="btn1" id="registrarse" onclick="registro()">Registrarse</button>
         <img src="../img/imagen2.png" alt="caja" class="img2">
         <label for="terminos" class="term">Al crear una cuenta, acepta las condiciones de uso y aviso de privacidad.</label>
         <input type="checkbox" class="check" id="terminos">
     </p>
+    <!-- Pie de pagina o footer para enlaces a pantalla adicionales -->
     <h3 class="mapa">Mapa de navegacion</h3>
     <footer>
         <div class="divfooter">
             <label for="">Acerca de</label><br>
             <a href="../index.html">Inicio</a><br>
-            <a href="pantalla2.html">Iniciar sesion</a>
+            <a href="inicioSesion.html">Iniciar sesion</a>
         </div>
         <div class="divfooter">
             <label for="">Vendedor</label><br>
-            <a href="pantalla3.html">Ingresar producto nuevo</a><br>
-            <a href="pantalla4.html">Medios de pago</a><br>
-            <a href="pantalla5.html">Confirmacion pagos</a><br>
+            <a href="registroArticulo.html">Ingresar producto nuevo</a><br>
+            <a href="ingresarMetodoPago.html">Medios de pago</a><br>
+            <a href="ingresarMetodoPago2.html">Confirmacion pagos</a><br>
         </div>
         <div class="divfooter">
             <label for="">Redes Sociales</label><br>
@@ -74,8 +77,8 @@
         </div>
         <div class="divfooter">
             <label for="">Cliente</label><br>
-            <a href="pantalla6.html">Datos de entrega</a><br>
-            <a href="pantalla1.html">Registrate</a><br>
+            <a href="entregaPedido.html">Datos de entrega</a><br>
+            <a href="registro.html">Registrate</a><br>
         </div>
     </footer>
     <script src="..//js/proyecto.js"></script>
