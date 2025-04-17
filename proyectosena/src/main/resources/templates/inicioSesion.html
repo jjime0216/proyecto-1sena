@@ -10,9 +10,9 @@
     <!-- Formulario inicio de sesion -->
     <header>
         <h3>My project</h3>
-        <h1>Inicio de sesion</h1>
+        <h2>Inicio de sesion</h2>
     </header>
-    <form th:action="@{/login}" method="post" class="form1">
+    <div class="anchoAlerta">
         <div th:if="${param.error}">
             <div class="error">
                 Usuario o contraseña invalidos
@@ -23,6 +23,8 @@
                 Ha cerrado sesion exitosamente
             </div>
         </div>
+    </div>
+    <form th:action="@{/login}" method="post" class="form1">
         <P>
             <label for="username" class="label2">Correo electronico</label>
         </P>
@@ -35,7 +37,7 @@
             <input type="submit" class="btn2" onclick="ingresar()" id="login-submit" value="Ingresar" />
             <!-- <button type="button" class="btn2" onclick="ingresar()">Entrar</button> -->
         <p>
-            <span>Si eres nuevo usuario<a th:href=@{/registro}> Registro </a></span>
+            <span class="aRedit"> ¿nuevo usuario?<a class="aRedit text" th:href=@{/registro}> Registrate </a></span>
         </p>
     </form>
     
