@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th= "http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,8 +28,9 @@
         </div>
 
         <div class="divIndex2">
-            <a href="html/inicioSesion.html" class="aIndex2">Iniciar sesion</a>
-            <a href="html/registro.html" class="aIndex2">Registrarse</a>
+            <!-- <a href="html/inicioSesion.html" class="aIndex2">Iniciar sesion</a>
+            <a href="html/registro.html" class="aIndex2">Registrarse</a> -->
+            <a th:href="@{/logout}">Cerrar sesión</a>
         </div>
     </header>
     <!-- Prototipo de vista productos no dinamicos -->

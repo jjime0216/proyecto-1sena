@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,21 +10,34 @@
     <!-- Formulario inicio de sesion -->
     <header>
         <h3>My project</h3>
-        <h1>Inicio de sesion</h1>
+        <h2>Inicio de sesion</h2>
     </header>
-    <form action="" class="form1">
+    <div class="anchoAlerta">
+        <div th:if="${param.error}">
+            <div class="error">
+                Usuario o contraseña invalidos
+            </div>
+        </div>
+        <div th:if="${param.logout}">
+            <div class="logout">
+                Ha cerrado sesion exitosamente
+            </div>
+        </div>
+    </div>
+    <form th:action="@{/login}" method="post" class="form1">
         <P>
-            <label for="usuario" class="label2">Correo electronico</label>
+            <label for="username" class="label2">Correo electronico</label>
         </P>
-            <input type="email" placeholder="minombre@mirpoyecto.com" class="inputP2" id="usuario">
+            <input type="email" placeholder="minombre@mirpoyecto.com" class="inputP2" name="username" id="username" required>
         <P>
             <label for="password" class="label2">Contraseña</label>
         </P>
-            <input type="password" placeholder="Contraseña" class="inputP2" id="password">
+            <input type="password" placeholder="Contraseña" class="inputP2" name="password" id="password" required>
             <p id="incorrecto"></p>
-            <button type="button" class="btn2" onclick="ingresar()">Entrar</button>
+            <input type="submit" class="btn2" onclick="ingresar()" id="login-submit" value="Ingresar" />
+            <!-- <button type="button" class="btn2" onclick="ingresar()">Entrar</button> -->
         <p>
-            <a class="aRedireccion" href="/html/registro.html">¿Nuevo aqui? Registrate</a>
+            <span class="aRedit"> ¿nuevo usuario?<a class="aRedit text" th:href=@{/registro}> Registrate </a></span>
         </p>
     </form>
     
@@ -55,6 +68,6 @@
             <a href="/html/registro.html">Registrate</a><br>
         </div>
     </footer>
-    <script src="..//js/proyecto.js"></script>
+    <!-- <script src="..//js/proyecto.js"></script> -->
 </body>
 </html>
