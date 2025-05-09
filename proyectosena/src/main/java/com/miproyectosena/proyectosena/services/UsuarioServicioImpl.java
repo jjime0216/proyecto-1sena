@@ -24,7 +24,7 @@ public class UsuarioServicioImpl implements IUsuarioServicio {
 
     @Override
     public Usuario guardar(UsuarioDTO registroDTO) {
-       Usuario usuario = new Usuario(registroDTO.getNombre(), registroDTO.getApellido(), registroDTO.getNumeroCelular(), registroDTO.getCorreo(), passwordEncoder.encode(registroDTO.getPassword()));
+       Usuario usuario = new Usuario(registroDTO.getNombre(), registroDTO.getApellido(), registroDTO.getNumeroCelular(), registroDTO.getCorreo(), passwordEncoder.encode(registroDTO.getPassword()),registroDTO.getRoles());
        
        return iUsuarioRepo.save(usuario);
     }
