@@ -32,6 +32,11 @@ public class Roles {
         this.id = id;
         this.nombre = nombre;
     }
+    
+    public Roles(String nombre) {
+        this.nombre = nombre;
+    }
+    
     public Roles() {
     }
 

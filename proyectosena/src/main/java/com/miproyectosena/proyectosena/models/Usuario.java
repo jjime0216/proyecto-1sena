@@ -71,6 +71,15 @@ public class Usuario {
     
 
 
+    public Usuario(String nombre, String apellido, String numeroCelular, String correo, String password) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.numeroCelular = numeroCelular;
+        this.correo = correo;
+        this.password = password;
+    }
+
+
     public Usuario(String nombre, String apellido, String numeroCelular, String correo, String password,
             Set<Roles> roles) {
         this.nombre = nombre;

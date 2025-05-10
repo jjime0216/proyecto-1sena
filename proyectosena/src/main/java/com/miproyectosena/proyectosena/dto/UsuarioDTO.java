@@ -10,7 +10,7 @@ public class UsuarioDTO {
     private String numeroCelular;
     private String correo;
     private String password;
-    private List<String> roles;
+    private List<String> rolSeleccionado;
 
     public UsuarioDTO() {
     }
@@ -19,26 +19,27 @@ public class UsuarioDTO {
         this.correo = correo;
     }
 
+    
 
     public UsuarioDTO(String nombre, String apellido, String numeroCelular, String correo, String password,
-            List<String> roles) {
+            List<String> rolSeleccionado) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.numeroCelular = numeroCelular;
         this.correo = correo;
         this.password = password;
-        this.roles = roles;
+        this.rolSeleccionado = rolSeleccionado;
     }
 
     public UsuarioDTO(Long id, String nombre, String apellido, String numeroCelular, String correo, String password,
-            List<String> roles) {
+            List<String> rolSeleccionado) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.numeroCelular = numeroCelular;
         this.correo = correo;
         this.password = password;
-        this.roles = roles;
+        this.rolSeleccionado = rolSeleccionado;
     }
 
     public Long getId() {
@@ -89,12 +90,14 @@ public class UsuarioDTO {
         this.password = password;
     }
 
-    public List<String> getRoles() {
-        return roles;
+    public List<String> getRolSeleccionado() {
+        return rolSeleccionado;
     }
 
-    public void setRoles(List<String> roles) {
-        this.roles = roles;
+    public void setRolSeleccionado(List<String> rolSeleccionado) {
+        this.rolSeleccionado = rolSeleccionado;
     }
+
+    
     
 }
