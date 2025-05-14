@@ -78,7 +78,7 @@ h1{
 form{
     margin: 0 auto;
     width: 400px;
-    height: 360px;
+    height: 370px;
     background-color: rgb(247,243,243 );
     padding: 20px;
     border-radius: 20px;
@@ -219,6 +219,12 @@ footer{
 
 a{
     color: #ffffff;
+}
+
+.checkRol{
+    width: 15px;
+    display: flex;
+    align-items: center;
 }
 
 /* Extras pantalla inicio de sesion */
