@@ -51,16 +51,16 @@ public class UsuarioServicioImpl implements IUsuarioServicio {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Usuario usuario = iUsuarioRepo.findByCorreo(username);
-        if (usuario == null) {
-            throw new UsernameNotFoundException("Usuario o contraseña invalida");
-        }
-        List<GrantedAuthority> authorities = usuario.getRoles()
+       Usuario usuario = iUsuarioRepo.findByCorreo(username);
+       if (usuario == null) {
+            throw new UsernameNotFoundException("Usuario o contraseña invalidos");
+       }
+       
+       List<GrantedAuthority> authorities = usuario.getRoles()
             .stream()
             .map(rol -> new SimpleGrantedAuthority(rol.getNombre()))
             .collect(Collectors.toList());
-        return new User(usuario.getCorreo(), usuario.getPassword(), authorities);
-        
+    return new User (usuario.getCorreo(),usuario.getPassword(), authorities);
     }
 
 

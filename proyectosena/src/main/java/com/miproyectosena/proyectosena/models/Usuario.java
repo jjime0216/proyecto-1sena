@@ -56,9 +56,12 @@ public class Usuario {
 
     public Usuario(String string, String string2, String string3, String string4, String string5, List<String> list) {
     }
+    
+    
+    public Usuario() {
+    }
 
-    
-    
+
     public Usuario(Long id, String nombre, String apellido, String numeroCelular, String correo, String password,Set<Roles> roles) {
         this.id = id;
         this.nombre = nombre;
