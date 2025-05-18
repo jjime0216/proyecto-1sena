@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th= "http://www.thymeleaf.org">
+<html lang="en" xmlns:th= "http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi primer proyecto</title>
     <link rel="stylesheet" href="css/proyecto.css">
 </head>
+<body>
+<!--------------------------------------- Vista de comprador ------------------------------------->
 <!-- Pantalla principal sin inicio de sesion -->
+<div sec:authorize="hasRole('COMPRADOR') and !hasRole('VENDEDOR')">
 <!-- Encabezado de la pagina  -->
     <div>
     <header class="headerIndex">
@@ -35,6 +38,7 @@
         <!-- Prototipo de vista productos no dinamicos -->
     
     <div class="main-content" id="main">
+        <h1>Has ingresado como comprador</h1>
         <h2 class="h2Index">Productos</h2>
         <p class="pIndex2">Categoria: Juegos</p>
         <div class="divIndex3">
@@ -102,5 +106,210 @@
         document.getElementById("main").classList.toggle("expanded");
     }
     </script>
+</div>
+</body>
+<body>
+<!----------------------------------- Vista de vendedor ------------------------------------>
+<div sec:authorize="hasRole('VENDEDOR') and !hasRole('COMPRADOR')">
+<!-- Encabezado de la pagina  -->
+    <div>
+    <header class="headerIndex">
+            <!-- Barra de busqueda -->
+            <div class="divIndex">
+                    <input type="text" placeholder="Buscar..." class="inputIndex" id="buscar">
+                    <button class="btn16" id="btnBuscar"><img src="img/glassIcon.png" alt="" class="imgIndex2"></button>
+            </div>
+
+            <div class="divIndex2">
+                <!-- <a href="html/inicioSesion.html" class="aIndex2">Iniciar sesion</a>
+                <a href="html/registro.html" class="aIndex2">Registrarse</a> -->
+                <a th:href="@{/logout}">Cerrar sesión</a>
+            </div>
+    </header>
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+            <ul>
+                <li><a href="" class="aIndex">Mis ventas</a></li>
+                <li><a href="" class="aIndex">Agregar producto</a></li>
+                <li><a href="" class="aIndex">Mis productos</a></li>
+                <li><a href="" class="aIndex">¿Quieres comprar</a></li>
+            </ul>
+        </div>
+        <!-- Prototipo de vista productos no dinamicos -->
+    
+    <div class="main-content" id="main">
+        <h1>Has ingresado como vendedor</h1>
+        <h2 class="h2Index">Productos</h2>
+        <p class="pIndex2">Categoria: Juegos</p>
+        <div class="divIndex3">
+            <div class="divIndex4">
+                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
+                <p class="pIndex">Nombre producto</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
+                <p class="pIndex">Precio: $$$$$</p>
+                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
+            </div>
+            <div class="divIndex4">
+                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
+                <p class="pIndex">Nombre producto</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
+                <p class="pIndex">Precio: $$$$$</p>
+                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
+            </div>
+            <div class="divIndex4">
+                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
+                <p class="pIndex">Nombre producto</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
+                <p class="pIndex">Precio: $$$$$</p>
+                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
+            </div>
+            <div class="divIndex4">
+                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
+                <p class="pIndex">Nombre producto</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
+                <p class="pIndex">Precio: $$$$$</p>
+                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Pie de pagina o footer para enlaces a pantalla adicionales -->
+    <h3 class="mapa">Mapa de navegacion</h3>
+    <footer>
+        <div class="divfooter">
+            <label for="">Acerca de</label><br>
+            <a href="index.html">Inicio</a><br>
+            <a href="/html/inicioSesion.html">Iniciar sesion</a>
+        </div>
+        <div class="divfooter">
+            <label for="###">Vendedor</label><br>
+            <a href="/html/registroArticulo.html">Ingresar producto nuevo</a><br>
+            <a href="/html/ingresarMetodoPago.html">Medios de pago</a><br>
+            <a href="/html/ingresarMetodoPago2.html">Confirmacion pagos</a><br>
+        </div>
+        <div class="divfooter">
+            <label for="">Redes Sociales</label><br>
+            <a href="https://x.com">X</a><br>
+            <a href="https://www.facebook.com/">Facebook</a><br>
+            <a href="https://www.instagram.com">Instagram</a><br>
+            <a href="https://www.youtube.com/">Youtube</a><br>
+        </div>
+        <div class="divfooter">
+            <label for="">Cliente</label><br>
+            <a href="/html/entregaPedido.html">Datos de entrega</a><br>
+            <a href="/html/registro.html">Registrate</a><br>
+        </div>
+    </footer>
+    <script>
+    function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("collapsed");
+        document.getElementById("main").classList.toggle("expanded");
+    }
+    </script>
+</div>
+</body>
+<body>
+<!----------------------------- Vista para cuando tenga los dos roles  ------------------------>
+<div sec:authorize="hasRole('COMPRADOR') and hasRole('VENDEDOR')">
+<!-- Encabezado de la pagina  -->
+    <div>
+    <header class="headerIndex">
+            <!-- Barra de busqueda -->
+            <div class="divIndex">
+                    <input type="text" placeholder="Buscar..." class="inputIndex" id="buscar">
+                    <button class="btn16" id="btnBuscar"><img src="img/glassIcon.png" alt="" class="imgIndex2"></button>
+            </div>
+
+            <div class="divIndex2">
+                <!-- <a href="html/inicioSesion.html" class="aIndex2">Iniciar sesion</a>
+                <a href="html/registro.html" class="aIndex2">Registrarse</a> -->
+                <a th:href="@{/logout}">Cerrar sesión</a>
+            </div>
+    </header>
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+            <ul>
+                <li><a href="" class="aIndex">Mis pedidos</a></li>
+                <li><a href="" class="aIndex">Productos</a></li>
+                <li><a href="" class="aIndex">Carrito de compras</a></li>
+                <li><a href="" class="aIndex">Mis ventas</a></li>
+                <li><a href="" class="aIndex">Agregar producto</a></li>
+                <li><a href="" class="aIndex">Mis productos</a></li>
+            </ul>
+        </div>
+        <!-- Prototipo de vista productos no dinamicos -->
+    
+    <div class="main-content" id="main">
+        <h1>Has ingresado con ambos roles comprador-vendedor</h1>
+        <h2 class="h2Index">Productos</h2>
+        <p class="pIndex2">Categoria: Juegos</p>
+        <div class="divIndex3">
+            <div class="divIndex4">
+                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
+                <p class="pIndex">Nombre producto</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
+                <p class="pIndex">Precio: $$$$$</p>
+                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
+            </div>
+            <div class="divIndex4">
+                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
+                <p class="pIndex">Nombre producto</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
+                <p class="pIndex">Precio: $$$$$</p>
+                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
+            </div>
+            <div class="divIndex4">
+                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
+                <p class="pIndex">Nombre producto</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
+                <p class="pIndex">Precio: $$$$$</p>
+                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
+            </div>
+            <div class="divIndex4">
+                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
+                <p class="pIndex">Nombre producto</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
+                <p class="pIndex">Precio: $$$$$</p>
+                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Pie de pagina o footer para enlaces a pantalla adicionales -->
+    <h3 class="mapa">Mapa de navegacion</h3>
+    <footer>
+        <div class="divfooter">
+            <label for="">Acerca de</label><br>
+            <a href="index.html">Inicio</a><br>
+            <a href="/html/inicioSesion.html">Iniciar sesion</a>
+        </div>
+        <div class="divfooter">
+            <label for="###">Vendedor</label><br>
+            <a href="/html/registroArticulo.html">Ingresar producto nuevo</a><br>
+            <a href="/html/ingresarMetodoPago.html">Medios de pago</a><br>
+            <a href="/html/ingresarMetodoPago2.html">Confirmacion pagos</a><br>
+        </div>
+        <div class="divfooter">
+            <label for="">Redes Sociales</label><br>
+            <a href="https://x.com">X</a><br>
+            <a href="https://www.facebook.com/">Facebook</a><br>
+            <a href="https://www.instagram.com">Instagram</a><br>
+            <a href="https://www.youtube.com/">Youtube</a><br>
+        </div>
+        <div class="divfooter">
+            <label for="">Cliente</label><br>
+            <a href="/html/entregaPedido.html">Datos de entrega</a><br>
+            <a href="/html/registro.html">Registrate</a><br>
+        </div>
+    </footer>
+    <script>
+    function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("collapsed");
+        document.getElementById("main").classList.toggle("expanded");
+    }
+    </script>
+</div>
 </body>
 </html>

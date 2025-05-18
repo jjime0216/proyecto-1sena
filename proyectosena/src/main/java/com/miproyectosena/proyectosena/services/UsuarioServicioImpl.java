@@ -62,6 +62,4 @@ public class UsuarioServicioImpl implements IUsuarioServicio {
             .collect(Collectors.toList());
     return new User (usuario.getCorreo(),usuario.getPassword(), authorities);
     }
-
-
 }
