@@ -16,29 +16,63 @@
         </div>
         <div>
             <!-- Formulario para ingresar un producto rol de vendedor -->
-            <h4 class="h4P3">Ingrese los datos del producto a vender</h4>
-            <form action="" class="form2">
-                <p>
-                    <label for="">Nombre (producto)</label>
-                </p>
-                <input type="text" placeholder="Ingrese el nombre del producto">
-                <p>
-                    <label for="">Fotografias</label>
-                </p>
-                <button class="btn"><label for="fotos">Subir<input type="file" class="btnFile" id="fotos"></label></button>
-                <label for="">PNG. JPG.</label>
-                <p>
-                    <label for="">Descripción del producto</label>
-                </p>
-                <textarea name="" id="" placeholder="Ingrese todos los datos de especificacion del producto"></textarea>
-                <p>
-                    <label for="">Costo del producto</label>
-                </p>
-                <input type="text" class="input2" value="$" disabled>
-                <input type="text" class="inputP3">
-                <input type="text" class="input2" value="COP" disabled>
-                <p class="centrarBoton">
-                    <button type="button" class="btn4">Siguiente</button>
+            <form action="">
+                <h4 class="h4P3">Ingrese los datos del producto a vender</h4>
+                <form action="" class="form2">
+                    <p>
+                        <label for="">Nombre (producto)</label>
+                    </p>
+                    <input type="text" placeholder="Ingrese el nombre del producto">
+                    <p>
+                        <label for="">Categoria</label>
+                    </p>
+                    <select name="" id="">
+                        <ul>
+                            <li>Hogar</li>
+                            <li>Ropa y accesorios</li>
+                            <li>Tecnologia</li>
+                            <li>Juguetes</li>
+                        </ul>
+                    </select>
+                    <p>
+                        <label for="">Fotografia</label>
+                    </p>
+                    <button class="btn"><label for="fotos">Subir<input type="file" class="btnFile" id="fotos"></label></button>
+                    <label for="">PNG. JPG.</label>
+                    <p>
+                        <label for="">Descripción del producto</label>
+                    </p>
+                    <textarea name="" id="" placeholder="Ingrese todos los datos de especificacion del producto"></textarea>
+                    <p>
+                        <label for="">Costo del producto</label>
+                    </p>
+                    <input type="text" class="input2" value="$" disabled>
+                    <input type="text" class="inputP3">
+                    <input type="text" class="input2" value="COP" disabled>
+                    <!-- <p class="centrarBoton">
+                        <button type="button" class="btn4">Siguiente</button>
+                    </p> -->
+                </form>
+        </div>
+        <div>
+                <!-- Agregar medios de pago rol de vendedor -->
+                <div class="hp4">
+                    <h2 class="pagop4" >Medios de pago</h2>
+                    <img class="img4" src="../img/imagen4.png" alt="Billetera">
+                </div>
+                <h2 class="h4P3" > Tipos de pago y tiempos de entrega </h2>
+                <!-- Formulario para ingresar informacion del pagos  -->
+                <form action="" class="form3" >
+                    <p>
+                        <label for=""> Tipos de pago </label>
+                    </p>
+                    <button type="button" class="btn6" > TC </button><button type="button" class="btn6"> TD </button><button type="button" class="btn6" > CE </button>
+                    <p>
+                        <label for="" class="otros1" > Confirme todos los que apliquen de la siguiente manera, TC: Tarjeta de credito, TD: Tarjeta debito, CE: Contra entrega </label>
+                    </p>
+                </form>
+                <p class="centrar1" >
+                    <button type="button" class="btn5" > Finalizar </button>
                 </p>
             </form>
         </div>
