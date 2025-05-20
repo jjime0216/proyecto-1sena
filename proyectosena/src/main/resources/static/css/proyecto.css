@@ -78,7 +78,7 @@ h1{
 form{
     margin: 0 auto;
     width: 400px;
-    height: 360px;
+    height: 370px;
     background-color: rgb(247,243,243 );
     padding: 20px;
     border-radius: 20px;
@@ -219,6 +219,12 @@ footer{
 
 a{
     color: #ffffff;
+}
+
+.checkRol{
+    width: 15px;
+    display: flex;
+    align-items: center;
 }
 
 /* Extras pantalla inicio de sesion */
@@ -645,7 +651,7 @@ ul li{
 
 ul li .aIndex{
     display: block;
-    padding: 30px 25px;
+    padding: 10px 10px;
     color: black;
     text-decoration: none;
     text-align: left;
@@ -694,7 +700,7 @@ ul li:hover ul.dropDown{
 }
 
 .divIndex2{
-    padding-left: 430px;
+    padding-left: 600px;
 }
 
 .aIndex2{
@@ -709,7 +715,7 @@ ul li:hover ul.dropDown{
 
 .divIndex3{
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
     padding: 10px;
 }
 
@@ -889,7 +895,85 @@ ul li:hover ul.dropDown{
     color: white;
 }
 
+/* ---------------------------------- Sidebar ------------------------------------------------ */
 
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 170px;
+    background-color: #325c6c;
+    color: white;
+    height: 100vh;
+    transition: width 0.3s ease;
+    position: relative;
+    border-radius: 10px;
+    border: solid black;
+    overflow: hidden;
+}
+
+.sidebar.collapsed .sidebar{
+    display: none;
+}
+
+.sidebar.collapsed {
+    width: 30px;
+}
+
+.sidebar .sidebar-toggle {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: #325c6c;
+    color: white;
+    width: 30px;
+    height: 30px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 50px;
+}
+
+.sidebar ul li {
+    padding: 10px 7px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li:hover {
+    background-color: #325C6C;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+    overflow-y: hidden;
+}
+
+.sidebar.collapsed + .main-content{
+    margin-left: 0px;
+}
+
+.main-content.expanded {
+    margin-left: -140px;
+}
+
+.sidebar.sidebar.collapsed a {
+    opacity: 0;
+    pointer-events: none
+}
 
 
 

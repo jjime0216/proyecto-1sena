@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,6 +43,11 @@
             </P>
                 <input type="password" id="password" th:field="*{password}" placeholder="Ingrese su contraseña" required>
             <p id="incorrecto"></p>
+            <label>Selecciona uno o más roles:</label><br>
+            <div class="checkRol">
+                <input type="checkbox" th:field="*{rolSeleccionado}" value="ROLE_COMPRADOR" id="checkRol1" /><label for="checkRol1">Comprador</label>
+                <input type="checkbox" th:field="*{rolSeleccionado}" value="ROLE_VENDEDOR" id="checkRol2" /><label for="checkRol2">Vendedor</label>
+            </div>
             <span class="aRedit">¿Estas registrado? <a class="aRedit text" th:href="@{/inicioSesion}">Inicio de sesion</a></span>
             <!-- Imagen de perfil -->
             <!-- <p class="p1">
