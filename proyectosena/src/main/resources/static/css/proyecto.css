@@ -376,7 +376,7 @@ textarea{
 }
 
 .form3 {
-    height: 450px;
+    height: 300px;
 }
 
 .btn6 {
@@ -614,6 +614,30 @@ textarea{
     padding-top: 5px;
 }
 
+.divAjustes{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-left: 10%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+.tiposBold{
+    font-weight: bold;
+    text-align: center;
+}
+
+.aGeneral{
+    text-decoration: none;
+    color: #060000;
+    margin: 10px;
+}
+.divGeneral{
+    display: flex;
+    justify-content: end;
+}
+
+
 /* ---------------------------------------- Pantalla Index principal --------------------------------------------*/
 
 .btn15{
@@ -758,6 +782,19 @@ ul li:hover ul.dropDown{
     margin-left: 30px;
     color: #4c4e52;
     font-weight: bold;
+}
+
+.divPagos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.inputPagos{
+    width: 20px;
+    margin: 10px;
+    
 }
 
 /* ------------------------------------- Adicionales pantalla 7------------------------------------------*/

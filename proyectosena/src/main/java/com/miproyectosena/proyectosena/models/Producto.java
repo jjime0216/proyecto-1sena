@@ -31,6 +31,10 @@ public class Producto {
     private String descripcionProducto;
     @Column(name = "costo_producto")
     private int costoProducto;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "categoria_id", nullable = false)
@@ -49,26 +53,33 @@ public class Producto {
     public Producto() {
     }
 
+    
+
     public Producto(Long id, String nombreProducto, String fotografia, String descripcionProducto, int costoProducto,
-            Categoria categoria, Set<Pagos> pagos) {
+            Usuario usuario, Categoria categoria, Set<Pagos> pagos) {
         this.id = id;
         this.nombreProducto = nombreProducto;
         this.fotografia = fotografia;
         this.descripcionProducto = descripcionProducto;
         this.costoProducto = costoProducto;
+        this.usuario = usuario;
         this.categoria = categoria;
         this.pagos = pagos;
     }
 
     
-    public Producto(String nombreProducto, String fotografia, String descripcionProducto, int costoProducto, Categoria categoria, Set<Pagos> pagos) {
+    public Producto(String nombreProducto, String fotografia, String descripcionProducto, int costoProducto,
+            Usuario usuario, Categoria categoria, Set<Pagos> pagos) {
         this.nombreProducto = nombreProducto;
         this.fotografia = fotografia;
         this.descripcionProducto = descripcionProducto;
         this.costoProducto = costoProducto;
+        this.usuario = usuario;
         this.categoria = categoria;
         this.pagos = pagos;
     }
+
+
 
     public Long getId() {
         return id;
@@ -124,6 +135,14 @@ public class Producto {
 
     public void setPagos(Set<Pagos> pagos) {
         this.pagos = pagos;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+    
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     

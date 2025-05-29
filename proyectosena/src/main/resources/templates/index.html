@@ -83,7 +83,7 @@
         </div>
         <div class="divfooter">
             <label for="###">Vendedor</label><br>
-            <a href="/html/registroArticulo.html">Ingresar producto nuevo</a><br>
+            <a th:href="@{/producto/nuevo}">Ingresar producto nuevo</a><br>
             <a href="/html/ingresarMetodoPago.html">Medios de pago</a><br>
             <a href="/html/ingresarMetodoPago2.html">Confirmacion pagos</a><br>
         </div>
@@ -131,7 +131,7 @@
             <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
             <ul>
                 <li><a href="" class="aIndex">Mis ventas</a></li>
-                <li><a href="" class="aIndex">Agregar producto</a></li>
+                <li><a th:href="@{/producto/nuevo}" class="aIndex">Agregar producto</a></li>
                 <li><a href="" class="aIndex">Mis productos</a></li>
                 <li><a href="" class="aIndex">¿Quieres comprar</a></li>
             </ul>
@@ -235,7 +235,7 @@
                 <li><a href="" class="aIndex">Productos</a></li>
                 <li><a href="" class="aIndex">Carrito de compras</a></li>
                 <li><a href="" class="aIndex">Mis ventas</a></li>
-                <li><a href="" class="aIndex">Agregar producto</a></li>
+                <li><a th:href="@{/producto/nuevo}" class="aIndex">Agregar producto</a></li>
                 <li><a href="" class="aIndex">Mis productos</a></li>
             </ul>
         </div>

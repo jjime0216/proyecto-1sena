@@ -2,50 +2,60 @@ package com.miproyectosena.proyectosena.dto;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class ProductoDTO {
     private Long id;
     private String nombreProducto;
-    private String fotografia;
-    private String descripcion;
+    private MultipartFile archivoImagen;
+    private String descripcionProducto;
     private int costoProducto;
-    private List<String> categoriaSeleccionada;
+    private Long categoria_id;
     private List<String> pagoSeleccionado;
-
-    
 
 
     public ProductoDTO() {
     }
+ 
 
-    
 
-    public ProductoDTO(List<String> categoriaSeleccionada, List<String> pagoSeleccionado) {
-        this.categoriaSeleccionada = categoriaSeleccionada;
+    public ProductoDTO(Long categoria_id, List<String> pagoSeleccionado) {
+        this.categoria_id = categoria_id;
         this.pagoSeleccionado = pagoSeleccionado;
     }
 
 
-
-    public ProductoDTO(String nombreProducto, String fotografia, String descripcion, int costoProducto,
-            List<String> categoriaSeleccionada, List<String> pagoSeleccionado) {
+    public ProductoDTO(String nombreProducto, MultipartFile archivoImagen, String descripcionProducto,
+            int costoProducto, Long categoria_id, List<String> pagoSeleccionado) {
         this.nombreProducto = nombreProducto;
-        this.fotografia = fotografia;
-        this.descripcion = descripcion;
+        this.archivoImagen = archivoImagen;
+        this.descripcionProducto = descripcionProducto;
         this.costoProducto = costoProducto;
-        this.categoriaSeleccionada = categoriaSeleccionada;
+        this.categoria_id = categoria_id;
         this.pagoSeleccionado = pagoSeleccionado;
     }
 
-    public ProductoDTO(Long id, String nombreProducto, String fotografia, String descripcion, int costoProducto,
-            List<String> categoriaSeleccionada, List<String> pagoSeleccionado) {
+
+
+
+
+
+    public ProductoDTO(Long id, String nombreProducto, MultipartFile archivoImagen, String descripcionProducto,
+            int costoProducto, Long categoria_id, List<String> pagoSeleccionado) {
         this.id = id;
         this.nombreProducto = nombreProducto;
-        this.fotografia = fotografia;
-        this.descripcion = descripcion;
+        this.archivoImagen = archivoImagen;
+        this.descripcionProducto = descripcionProducto;
         this.costoProducto = costoProducto;
-        this.categoriaSeleccionada = categoriaSeleccionada;
+        this.categoria_id = categoria_id;
         this.pagoSeleccionado = pagoSeleccionado;
     }
+
+
+
+
+
+
     public Long getId() {
         return id;
     }
@@ -58,35 +68,43 @@ public class ProductoDTO {
     public void setNombreProducto(String nombreProducto) {
         this.nombreProducto = nombreProducto;
     }
-    public String getFotografia() {
-        return fotografia;
-    }
-    public void setFotografia(String fotografia) {
-        this.fotografia = fotografia;
-    }
-    public String getDescripcion() {
-        return descripcion;
-    }
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
     public int getCostoProducto() {
         return costoProducto;
     }
     public void setCostoProducto(int costoProducto) {
         this.costoProducto = costoProducto;
     }
-    public List<String> getCategoriaSeleccionada() {
-        return categoriaSeleccionada;
-    }
-    public void setCategoriaSeleccionada(List<String> categoriaSeleccionada) {
-        this.categoriaSeleccionada = categoriaSeleccionada;
-    }
     public List<String> getPagoSeleccionado() {
         return pagoSeleccionado;
     }
     public void setPagoSeleccionado(List<String> pagoSeleccionado) {
         this.pagoSeleccionado = pagoSeleccionado;
+    }
+
+    public Long getCategoria_id() {
+        return categoria_id;
+    }
+
+    public void setCategoria_id(Long categoria_id) {
+        this.categoria_id = categoria_id;
+    }
+
+
+
+    public String getDescripcionProducto() {
+        return descripcionProducto;
+    }
+
+    public void setDescripcionProducto(String descripcionProducto) {
+        this.descripcionProducto = descripcionProducto;
+    }
+
+    public MultipartFile getArchivoImagen() {
+        return archivoImagen;
+    }
+
+    public void setArchivoImagen(MultipartFile archivoImagen) {
+        this.archivoImagen = archivoImagen;
     }
 
     
