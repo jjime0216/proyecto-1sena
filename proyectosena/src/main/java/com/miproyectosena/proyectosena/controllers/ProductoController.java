@@ -48,9 +48,9 @@ public class ProductoController {
     }
 
     @PostMapping("/guardar")
-    public String guardarProducto(@ModelAttribute ProductoDTO productoDTO,@RequestParam("archivo") MultipartFile imagen, Principal principal){
+    public String guardarProducto(@ModelAttribute ProductoDTO productoDTO,@RequestParam("imagen") MultipartFile imagen, Principal principal){
         Usuario usuario = iUsuarioRepo.findByCorreo(principal.getName());
         productoServicioImpl.guardarProducto(productoDTO, usuario, imagen);
-        return "/";
+        return "redirect:/producto/nuevo?exito=true";
     }
 }

@@ -8,8 +8,8 @@
 </head>
 <body>
     <!-- Registro de articulo -->
-        <div> 
-        <div class="divPrueba">
+     <div class="divPrueba">
+        <div>
             <div class="divP3">
                 <h3 class="h3P3">My project</h3>
                 <h1 class="h1P3">Registro Articulo</h1>
@@ -19,20 +19,25 @@
                 <a th:href="@{/}" class="aGeneral">Regresar</a>
                 <a th:href="@{/logout}" class="aGeneral">Cerrar sesión</a>
             </div>
+            <div class="anchoAlerta">
+                <div th:if="${param.exito}">
+                    <div class="alerta">
+                        Se ha guardado el producto exitosamente!
+                    </div>
+                </div>
+            </div>
         <div class="divAjustes">
-                <div>
                 <!-- Formulario para ingresar un producto rol de vendedor -->
-                <form th:action="@{/producto/guardar}" method="post" enctype="multipart/form-data" th:object="${productoDTO}">
+                <form th:action="@{/producto/guardar}" method="post" enctype="multipart/form-data" th:object="${productoDTO}" class="form2">
                     <h4 class="h4P3">Ingrese los datos del producto a vender</h4>
-                    <form action="" class="form2">
                         <p>
                             <label for="">Nombre (producto)</label>
                         </p>
-                        <input type="text" placeholder="Ingrese el nombre del producto">
+                        <input type="text" placeholder="Ingrese el nombre del producto" th:field="*{nombreProducto}" required maxlength="100">
                         <p>
                             <label for="">Categoria</label>
                         </p>
-                        <select name="" id="" required>
+                        <select th:field="*{categoria_id}" required>
                                 <option value="" disabled selected>Seleccionar..</option>
                                 <option 
                                     th:each="cat : ${categoria}" 
@@ -43,41 +48,39 @@
                         <p>
                             <label for="">Fotografia</label>
                         </p>
-                        <button class="btn"><label for="fotos">Subir<input type="file" class="btnFile" id="fotos" name="archivoImagen" accept="image/*" required></label></button>
+                        <label class="btn" for="fotos">Subir<input type="file" class="btnFile" id="fotos" name="imagen" accept="imagen/*" required></label>
                         <label for="">PNG. JPG.</label>
                         <p>
                             <label for="">Descripción del producto</label>
                         </p>
-                        <textarea name="" id="" placeholder="Ingrese todos los datos de especificacion del producto" minlength="70"></textarea>
+                        <textarea placeholder="Ingrese todos los datos de especificacion del producto" minlength="70" th:field="*{descripcionProducto}"></textarea>
                         <!-- <p class="centrarBoton">
                             <button type="button" class="btn4">Siguiente</button>
                         </p> -->
-                    </form>
-                </div>
-                <div>
                     <!-- Formulario para ingresar informacion del pagos  -->
-                    <form action="" class="form3" >
                         <p class="tiposBold">
                             <label for=""> Tipos de pago </label>
                         </p>
                         <!-- <button type="button" class="btn6" > TC </button><button type="button" class="btn6"> TD </button><button type="button" class="btn6" > CE </button> -->
-                         <div class="divPagos">
-                            <input type="checkbox" class="inputPagos">TC
-                            <input type="checkbox" class="inputPagos">TD
-                            <input type="checkbox" class="inputPagos">CE
-                         </div>
+                        <div class="divPagos">
+                            <div class="divPagos" th:each="pago : ${pagos}">
+                                <input type="checkbox" class="inputPagos" 
+                                    name="pagoSeleccionado"
+                                    th:value="${pago.id}" >
+                                    <span th:text="${pago.nombrePagos}"></span>
+                            </div>
+                        </div> 
                         <p>
-                            <label for="" class="otros1" > Confirme todos los que apliquen de la siguiente manera, TC: Tarjeta de credito, TD: Tarjeta debito, CE: Contra entrega </label>
+                            <p for="" class="otros1" > Confirme todos los que apliquen de la siguiente manera, TC: Tarjeta de credito, TD: Tarjeta debito, CE: Contra entrega </p>
                         </p>
                         <p>
                             <label for="">Costo del producto</label>
                         </p>
                         <input type="text" class="input2" value="$" disabled>
-                        <input type="text" class="inputP3">
+                        <input type="text" class="inputP3" th:field="*{costoProducto}">
                         <input type="text" class="input2" value="COP" disabled>
-                    </form>
                     <p class="centrar1" >
-                        <button type="button" class="btn5" > Finalizar </button>
+                        <button type="submit" class="btn5" > Finalizar </button>
                     </p>
                 </form>
             </div>

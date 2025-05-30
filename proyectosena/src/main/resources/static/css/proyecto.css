@@ -301,7 +301,7 @@ a{
 
 .form2{
     width: 380px;
-    height: 400px;
+    height: 600px;
 }
 
 .h4P3{
@@ -614,13 +614,13 @@ textarea{
     padding-top: 5px;
 }
 
-.divAjustes{
-    display: grid;
+/* .divAjustes{
+    display: flex;
     grid-template-columns: auto auto;
     padding-left: 10%;
     padding-bottom: 5%;
     padding-top: 5%;
-}
+} */
 
 .tiposBold{
     font-weight: bold;
@@ -786,13 +786,13 @@ ul li:hover ul.dropDown{
 
 .divPagos{
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 25px;
+    align-items: center;
+    font-size: 15px;
 }
 
 .inputPagos{
-    width: 20px;
+    width: 18px;
     margin: 10px;
     
 }

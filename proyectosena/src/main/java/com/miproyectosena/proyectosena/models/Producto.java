@@ -23,13 +23,13 @@ public class Producto {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nombre_producto")
+    @Column(name = "nombre_Producto")
     private String nombreProducto;
     @Column(name = "fotografia")
     private String fotografia;
     @Column(name = "descripcion")
     private String descripcionProducto;
-    @Column(name = "costo_producto")
+    @Column(name = "costo_Producto")
     private int costoProducto;
 
     @ManyToOne(fetch = FetchType.EAGER)
