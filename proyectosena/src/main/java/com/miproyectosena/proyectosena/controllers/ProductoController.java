@@ -18,6 +18,9 @@ import com.miproyectosena.proyectosena.repositories.IPagosRepositorio;
 import com.miproyectosena.proyectosena.repositories.IUsuarioRepo;
 import com.miproyectosena.proyectosena.services.ProductoServicioImpl;
 
+
+
+
 import org.springframework.ui.Model;
 
 
@@ -48,9 +51,9 @@ public class ProductoController {
     }
 
     @PostMapping("/guardar")
-    public String guardarProducto(@ModelAttribute ProductoDTO productoDTO,@RequestParam("imagen") MultipartFile imagen, Principal principal){
+    public String guardarProducto(@ModelAttribute ProductoDTO productoDTO,@RequestParam("imagen") MultipartFile imagen,@RequestParam(value = "pagoSeleccionado",required = false)Long[] pagosSeleccionados, Principal principal){
         Usuario usuario = iUsuarioRepo.findByCorreo(principal.getName());
-        productoServicioImpl.guardarProducto(productoDTO, usuario, imagen);
+        productoServicioImpl.guardarProducto(productoDTO, usuario, imagen,pagosSeleccionados);
         return "redirect:/producto/nuevo?exito=true";
     }
 }

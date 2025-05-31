@@ -9,7 +9,7 @@ public class ProductoDTO {
     private String nombreProducto;
     private MultipartFile archivoImagen;
     private String descripcionProducto;
-    private int costoProducto;
+    private Integer costoProducto;
     private Long categoria_id;
     private List<String> pagoSeleccionado;
 
@@ -26,7 +26,7 @@ public class ProductoDTO {
 
 
     public ProductoDTO(String nombreProducto, MultipartFile archivoImagen, String descripcionProducto,
-            int costoProducto, Long categoria_id, List<String> pagoSeleccionado) {
+            Integer costoProducto, Long categoria_id, List<String> pagoSeleccionado) {
         this.nombreProducto = nombreProducto;
         this.archivoImagen = archivoImagen;
         this.descripcionProducto = descripcionProducto;
@@ -41,7 +41,7 @@ public class ProductoDTO {
 
 
     public ProductoDTO(Long id, String nombreProducto, MultipartFile archivoImagen, String descripcionProducto,
-            int costoProducto, Long categoria_id, List<String> pagoSeleccionado) {
+            Integer costoProducto, Long categoria_id, List<String> pagoSeleccionado) {
         this.id = id;
         this.nombreProducto = nombreProducto;
         this.archivoImagen = archivoImagen;
@@ -68,10 +68,10 @@ public class ProductoDTO {
     public void setNombreProducto(String nombreProducto) {
         this.nombreProducto = nombreProducto;
     }
-    public int getCostoProducto() {
+    public Integer getCostoProducto() {
         return costoProducto;
     }
-    public void setCostoProducto(int costoProducto) {
+    public void setCostoProducto(Integer costoProducto) {
         this.costoProducto = costoProducto;
     }
     public List<String> getPagoSeleccionado() {

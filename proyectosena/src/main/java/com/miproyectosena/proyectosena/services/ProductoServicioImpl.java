@@ -40,7 +40,7 @@ public class ProductoServicioImpl {
         return iProductoRepository.findByUsuario(usuario);
     }
 
-    public Producto guardarProducto(ProductoDTO dto, Usuario usuario, MultipartFile archivo){
+    public Producto guardarProducto(ProductoDTO dto, Usuario usuario, MultipartFile archivo, Long[] pagosSeleccionados){
         Producto producto = new Producto();
         producto.setNombreProducto(dto.getNombreProducto());
         producto.setDescripcionProducto(dto.getDescripcionProducto());
@@ -64,11 +64,12 @@ public class ProductoServicioImpl {
         Categoria categoria = iCategoriaRepositorio.findById(dto.getCategoria_id()).orElse(null);
         producto.setCategoria(categoria);
 
+        iProductoRepository.save(producto);
+
         Set<Pagos> pagos = new HashSet<>();
-        for (String nombrePagos: dto.getPagoSeleccionado()){
-            Pagos pago = iPagosRepositorio.findByNombrePagos(nombrePagos);
-            if (pago != null) {
-                pagos.add(pago);
+        if(pagosSeleccionados != null){
+            for (Long idPago : pagosSeleccionados){
+                iPagosRepositorio.findById(idPago).ifPresent(pagos::add);
             }
         }
         producto.setPagos(pagos);
@@ -81,4 +82,19 @@ public class ProductoServicioImpl {
     public List<Producto> obtenerTodosLosProductos() {
         return iProductoRepository.findAll();
     }
+
+    public List<Producto> obtenerProductosPorRol(Usuario usuario) {
+    boolean esComprador = usuario.getRoles().stream()
+            .anyMatch(rol -> rol.getNombre().equalsIgnoreCase("ROLE_COMPRADOR"));
+    boolean esVendedor = usuario.getRoles().stream()
+            .anyMatch(rol -> rol.getNombre().equalsIgnoreCase("ROLE_VENDEDOR"));
+
+    if (esComprador || (esComprador && esVendedor)) {
+        return iProductoRepository.findAll(); // Ver todos
+    } else if (esVendedor) {
+        return iProductoRepository.findByUsuario(usuario); // Solo los suyos
+    }
+
+    return List.of(); // No tiene permisos válidos
+}
 }

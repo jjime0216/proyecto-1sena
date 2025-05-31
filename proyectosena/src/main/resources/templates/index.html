@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th= "http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,34 +40,15 @@
     <div class="main-content" id="main">
         <h1>Has ingresado como comprador</h1>
         <h2 class="h2Index">Productos</h2>
-        <p class="pIndex2">Categoria: Juegos</p>
         <div class="divIndex3">
-            <div class="divIndex4">
-                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
-                <p class="pIndex">Nombre producto</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
-                <p class="pIndex">Precio: $$$$$</p>
-                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
-            </div>
-            <div class="divIndex4">
-                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
-                <p class="pIndex">Nombre producto</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
-                <p class="pIndex">Precio: $$$$$</p>
-                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
-            </div>
-            <div class="divIndex4">
-                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
-                <p class="pIndex">Nombre producto</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
-                <p class="pIndex">Precio: $$$$$</p>
-                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
-            </div>
-            <div class="divIndex4">
-                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
-                <p class="pIndex">Nombre producto</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
-                <p class="pIndex">Precio: $$$$$</p>
+            <div class="divIndex4" th:each="producto: ${productos}">
+                <img src="img/caja.png" alt="Imagen producto" th:src="@{/imagen/{nombreArchivo}(nombreArchivo=${producto.fotografia})}" class="imgIndex3">
+                <p class="pIndex" th:text="${producto.nombreProducto}">Nombre producto</p>
+                <p th:text="${producto.descripcionProducto}">Descripcion</p>
+                <p class="pIndex">
+                    <span>Precio: </span>
+                    <span th:text="${producto.costoProducto}">0</span>
+                </p>
                 <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
             </div>
         </div>
@@ -143,32 +124,14 @@
         <h2 class="h2Index">Productos</h2>
         <p class="pIndex2">Categoria: Juegos</p>
         <div class="divIndex3">
-            <div class="divIndex4">
-                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
-                <p class="pIndex">Nombre producto</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
-                <p class="pIndex">Precio: $$$$$</p>
-                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
-            </div>
-            <div class="divIndex4">
-                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
-                <p class="pIndex">Nombre producto</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
-                <p class="pIndex">Precio: $$$$$</p>
-                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
-            </div>
-            <div class="divIndex4">
-                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
-                <p class="pIndex">Nombre producto</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
-                <p class="pIndex">Precio: $$$$$</p>
-                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
-            </div>
-            <div class="divIndex4">
-                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
-                <p class="pIndex">Nombre producto</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
-                <p class="pIndex">Precio: $$$$$</p>
+            <div class="divIndex4" th:each="producto: ${productos}">
+                <img src="img/caja.png" alt="Imagen producto" th:src="@{/imagen/{nombreArchivo}(nombreArchivo=${producto.fotografia})}" class="imgIndex3">
+                <p class="pIndex" th:text="${producto.nombreProducto}">Nombre producto</p>
+                <p th:text="${producto.descripcionProducto}">Descripcion</p>
+                <p class="pIndex">
+                    <span>Precio: </span>
+                    <span th:text="${producto.costoProducto}">0</span>
+                </p>
                 <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
             </div>
         </div>
@@ -246,32 +209,14 @@
         <h2 class="h2Index">Productos</h2>
         <p class="pIndex2">Categoria: Juegos</p>
         <div class="divIndex3">
-            <div class="divIndex4">
-                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
-                <p class="pIndex">Nombre producto</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
-                <p class="pIndex">Precio: $$$$$</p>
-                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
-            </div>
-            <div class="divIndex4">
-                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
-                <p class="pIndex">Nombre producto</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
-                <p class="pIndex">Precio: $$$$$</p>
-                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
-            </div>
-            <div class="divIndex4">
-                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
-                <p class="pIndex">Nombre producto</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
-                <p class="pIndex">Precio: $$$$$</p>
-                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
-            </div>
-            <div class="divIndex4">
-                <img src="img/caja.png" alt="Primer producto" class="imgIndex3">
-                <p class="pIndex">Nombre producto</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error temporibus hic alias quasi voluptatem veniam molestias ipsam laboriosam ipsa?</p>
-                <p class="pIndex">Precio: $$$$$</p>
+            <div class="divIndex4" th:each="producto: ${productos}">
+                <img src="img/caja.png" alt="Imagen producto" th:src="@{/imagen/{nombreArchivo}(nombreArchivo=${producto.fotografia})}" class="imgIndex3">
+                <p class="pIndex" th:text="${producto.nombreProducto}">Nombre producto</p>
+                <p th:text="${producto.descripcionProducto}">Descripcion</p>
+                <p class="pIndex">
+                    <span>Precio: </span>
+                    <span th:text="${producto.costoProducto}">0</span>
+                </p>
                 <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
             </div>
         </div>

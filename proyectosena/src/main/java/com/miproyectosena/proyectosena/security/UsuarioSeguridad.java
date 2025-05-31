@@ -37,6 +37,7 @@ public class UsuarioSeguridad {
         http
             .authenticationProvider(AuthenticationProvider())
             .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/imagen/**").permitAll()
                 .requestMatchers("/registro**", "/js/**", "/css/**", "/img/**").permitAll()
                 .anyRequest().authenticated()
             )

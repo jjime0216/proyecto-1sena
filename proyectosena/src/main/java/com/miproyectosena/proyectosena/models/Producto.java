@@ -30,7 +30,7 @@ public class Producto {
     @Column(name = "descripcion")
     private String descripcionProducto;
     @Column(name = "costo_Producto")
-    private int costoProducto;
+    private Integer costoProducto;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "usuario_id")
@@ -55,7 +55,7 @@ public class Producto {
 
     
 
-    public Producto(Long id, String nombreProducto, String fotografia, String descripcionProducto, int costoProducto,
+    public Producto(Long id, String nombreProducto, String fotografia, String descripcionProducto, Integer costoProducto,
             Usuario usuario, Categoria categoria, Set<Pagos> pagos) {
         this.id = id;
         this.nombreProducto = nombreProducto;
@@ -68,7 +68,7 @@ public class Producto {
     }
 
     
-    public Producto(String nombreProducto, String fotografia, String descripcionProducto, int costoProducto,
+    public Producto(String nombreProducto, String fotografia, String descripcionProducto, Integer costoProducto,
             Usuario usuario, Categoria categoria, Set<Pagos> pagos) {
         this.nombreProducto = nombreProducto;
         this.fotografia = fotografia;
@@ -113,11 +113,11 @@ public class Producto {
         this.descripcionProducto = descripcionProducto;
     }
 
-    public int getCostoProducto() {
+    public Integer getCostoProducto() {
         return costoProducto;
     }
 
-    public void setCostoProducto(int costoProducto) {
+    public void setCostoProducto(Integer costoProducto) {
         this.costoProducto = costoProducto;
     }
 
