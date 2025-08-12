@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.miproyectosena.proyectosena.dto.ProductoDTO;
+import com.miproyectosena.proyectosena.models.Producto;
 import com.miproyectosena.proyectosena.models.Usuario;
 import com.miproyectosena.proyectosena.repositories.ICategoriaRepositorio;
 import com.miproyectosena.proyectosena.repositories.IPagosRepositorio;
@@ -55,5 +57,16 @@ public class ProductoController {
         Usuario usuario = iUsuarioRepo.findByCorreo(principal.getName());
         productoServicioImpl.guardarProducto(productoDTO, usuario, imagen,pagosSeleccionados);
         return "redirect:/producto/nuevo?exito=true";
+    }
+
+    @GetMapping("/{id}")
+    public String verProducto(@PathVariable Long id,Model model){
+        Producto producto= productoServicioImpl.obtenerProductoPorId(id);
+        if (producto == null) {
+            return"error/404";
+        }
+
+        model.addAttribute("producto", producto);
+        return "vistaProducto";
     }
 }

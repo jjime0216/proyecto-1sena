@@ -78,6 +78,10 @@ public class ProductoServicioImpl {
         
     }
 
+    public Producto obtenerProductoPorId(Long id) {
+        return iProductoRepository.findById(id).orElse(null);
+    }
+
     // Para compradores
     public List<Producto> obtenerTodosLosProductos() {
         return iProductoRepository.findAll();

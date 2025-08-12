@@ -49,7 +49,7 @@
                     <span>Precio: </span>
                     <span th:text="${producto.costoProducto}">0</span>
                 </p>
-                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
+                <button class="btn17"><a th:href="@{/producto/{id}(id=${producto.id})}" class="aP7">Ver mas</a></button>
             </div>
         </div>
     </div>
@@ -132,7 +132,7 @@
                     <span>Precio: </span>
                     <span th:text="${producto.costoProducto}">0</span>
                 </p>
-                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
+                <button class="btn17"><a th:href="@{/producto/{id}(id=${producto.id})}" class="aP7">Ver mas</a></button>
             </div>
         </div>
     </div>
@@ -217,7 +217,7 @@
                     <span>Precio: </span>
                     <span th:text="${producto.costoProducto}">0</span>
                 </p>
-                <button class="btn17"><a href="html/vistaProducto.html" class="aP7">Ver mas</a></button>
+                <button class="btn17"><a th:href="@{/producto/{id}(id=${producto.id})}" class="aP7">Ver mas</a></button>
             </div>
         </div>
     </div>

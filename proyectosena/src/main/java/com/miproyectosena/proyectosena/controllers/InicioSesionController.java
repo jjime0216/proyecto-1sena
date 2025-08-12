@@ -27,7 +27,7 @@ public class InicioSesionController {
         return "inicioSesion";
     }
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String verPaginaDeInicio(Model model, Principal principal){
         List<Producto> productos;
 
